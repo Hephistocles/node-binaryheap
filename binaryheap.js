@@ -33,10 +33,22 @@ var Heap = function(min) {
 };
 
 Heap.init = function(obj, key) {
-  obj._parent = null;
-  obj._left = null;
-  obj._right = null;
-  obj._key = key;
+  Object.defineProperty(obj, '_parent', {
+    value: null,
+    writable: true
+  });
+  Object.defineProperty(obj, '_left', {
+    value: null,
+    writable: true
+  });
+  Object.defineProperty(obj, '_right', {
+    value: null,
+    writable: true
+  });
+  Object.defineProperty(obj, '_key', {
+    value: key,
+    writable: true
+  });
   return obj;
 };
 
